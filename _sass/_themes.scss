@@ -158,7 +158,9 @@ html[data-theme-setting="light"] {
     padding-top: 12px;
     display: block;
   }
+  html,
   body {
   background-color: var(--global-bg-color);
+  color: var(--global-text-color);
 }
 }
