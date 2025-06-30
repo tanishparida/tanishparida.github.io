@@ -161,6 +161,6 @@ html[data-theme-setting="light"] {
   html,
   body {
   background-color: var(--global-bg-color);
-  color: var(--global-text-color);
+  color: var(--global-text-color) !important;
 }
 }
