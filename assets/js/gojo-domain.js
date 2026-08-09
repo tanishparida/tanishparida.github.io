@@ -6,11 +6,13 @@
     attribute float aSize;
     attribute float aPhase;
     uniform float uTime;
+    uniform float uTwinkleAmplitude;
+    uniform float uTwinkleSpeed;
     varying float vTwinkle;
 
     void main() {
       vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-      vTwinkle = 0.68 + 0.32 * sin(uTime * 1.4 + aPhase);
+      vTwinkle = 1.0 - uTwinkleAmplitude + uTwinkleAmplitude * sin(uTime * uTwinkleSpeed + aPhase);
       gl_PointSize = aSize * vTwinkle * (42.0 / -mvPosition.z);
       gl_Position = projectionMatrix * mvPosition;
     }
@@ -28,7 +30,7 @@
     }
   `;
 
-  function createStars(count, spread, size, color, seed) {
+  function createStars(count, spread, size, color, seed, twinkleAmplitude, twinkleSpeed) {
     const positions = new Float32Array(count * 3);
     const sizes = new Float32Array(count);
     const phases = new Float32Array(count);
@@ -55,6 +57,8 @@
     const material = new THREE.ShaderMaterial({
       uniforms: {
         uTime: { value: 0 },
+        uTwinkleAmplitude: { value: twinkleAmplitude },
+        uTwinkleSpeed: { value: twinkleSpeed },
         uColor: { value: new THREE.Color(color) },
       },
       vertexShader,
@@ -77,8 +81,8 @@
   container.appendChild(renderer.domElement);
 
   // Dense, dim stars create the texture; the smaller bright layer adds depth.
-  const dimStars = createStars(30000, { x: 42, y: 28, z: 30 }, 0.045, 0x9db9e8, 17);
-  const brightStars = createStars(7000, { x: 38, y: 25, z: 25 }, 0.075, 0xeaf3ff, 91);
+  const dimStars = createStars(30000, { x: 42, y: 28, z: 30 }, 0.045, 0x9db9e8, 17, 0.005, 0.08);
+  const brightStars = createStars(7000, { x: 38, y: 25, z: 25 }, 0.075, 0xeaf3ff, 91, 0.005, 0.08);
   scene.add(dimStars, brightStars);
 
   function resize() {
@@ -92,7 +96,7 @@
   function animate(time) {
     const seconds = (time || 0) * 0.001;
     dimStars.material.uniforms.uTime.value = seconds;
-    brightStars.material.uniforms.uTime.value = seconds * 1.35;
+    brightStars.material.uniforms.uTime.value = seconds;
     dimStars.rotation.z = seconds * 0.0015;
     brightStars.rotation.z = -seconds * 0.002;
     renderer.render(scene, camera);

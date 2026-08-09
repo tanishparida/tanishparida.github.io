@@ -6,6 +6,17 @@
  * with the `al-foio` theme.
  */
 const progressBar = $("#progress");
+let progressHideTimeout;
+
+function showProgressWhileScrolling() {
+  if (getDistanceToScroll() <= 0) return;
+
+  progressBar.addClass("is-visible");
+  clearTimeout(progressHideTimeout);
+  progressHideTimeout = setTimeout(function () {
+    progressBar.removeClass("is-visible");
+  }, 800);
+}
 /*
  * We set up the bar after all elements are done loading.
  * In some cases, if the images in the page are larger than the intended
@@ -28,11 +39,15 @@ function progressBarSetup() {
     initializeProgressElement();
     $(document).on("scroll", function () {
       progressBar.attr({ value: getCurrentScrollPosition() });
+      showProgressWhileScrolling();
     });
     $(window).on("resize", initializeProgressElement);
   } else {
     resizeProgressBar();
-    $(document).on("scroll", resizeProgressBar);
+    $(document).on("scroll", function () {
+      resizeProgressBar();
+      showProgressWhileScrolling();
+    });
     $(window).on("resize", resizeProgressBar);
   }
 }
