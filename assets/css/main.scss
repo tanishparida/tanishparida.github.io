@@ -52,6 +52,21 @@ body > footer {
   z-index: 1;
 }
 
+// Solid navbar so page content doesn't show through while scrolling.
+body > header {
+  z-index: 2;
+}
+
+#navbar {
+  background-color: var(--global-bg-color);
+  border-bottom: 1px solid var(--global-divider-color);
+  opacity: 1;
+}
+
+body.home-body #navbar {
+  background-color: #000;
+}
+
 .home-page {
   padding-top: 1.5rem;
 }
@@ -63,22 +78,36 @@ body.home-body {
 }
 
 body.home-body .home-page .post-title {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   color: #fff;
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-family: inherit;
   font-weight: 400;
-  letter-spacing: -0.03em;
-  line-height: 1;
+  letter-spacing: normal;
+  line-height: 1.2;
+}
+
+body.home-body .home-page .home-name {
+  font-family: "Marcellus", serif;
+  font-weight: 400;
 }
 
 body.home-body .home-page article {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
 body.home-body .home-page p {
   color: #fff;
+}
+
+body.home-body .home-page .profile {
+  margin-top: 0.25rem;
+}
+
+body.home-body .home-page .profile img {
+  border-radius: 50%;
+  width: 100%;
 }
 
 .home-links {
@@ -123,6 +152,119 @@ body.home-body .home-page p {
   letter-spacing: 0.12em;
 }
 
+// Home page "upcoming" list.
+.home-upcoming {
+  clear: both;
+  margin-top: 2rem;
+}
+
+.home-upcoming h2 {
+  color: #fff;
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin: 0 0 0.6rem;
+}
+
+.home-upcoming ul {
+  font-size: 0.85rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.home-upcoming li {
+  margin: 0.3rem 0;
+}
+
+.home-upcoming-when {
+  color: #a9d8ff;
+  display: inline-block;
+  width: 5.5rem;
+}
+
+.home-upcoming-where {
+  color: #bdbdbd;
+}
+
+// Home page "selected research", styled after aqcheng.github.io.
+.home-research {
+  clear: both;
+  margin-top: 2rem;
+}
+
+.home-research h2 {
+  color: #fff;
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin: 0 0 0.9rem;
+}
+
+.home-research h2 span {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.home-pub {
+  font-size: 0.85rem;
+  margin: 0 0 0.75rem;
+}
+
+.home-pub summary {
+  cursor: pointer;
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: 1rem minmax(0, 1fr);
+  list-style: none;
+}
+
+.home-pub summary::-webkit-details-marker {
+  display: none;
+}
+
+.home-pub-title {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+a.home-pub-title:hover {
+  color: #cba9dc !important;
+}
+
+.home-pub-meta {
+  color: #e0e0e0;
+  font-size: 0.78rem;
+  margin-top: 0.2rem;
+}
+
+.home-pub-link {
+  color: #a9d8ff !important;
+  font-size: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+.home-pub-status {
+  color: #9e9e9e;
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.home-pub-desc {
+  color: #e0e0e0;
+  font-size: 0.8rem;
+  margin: 0.5rem 0 0 1.6rem;
+  max-width: 44rem;
+}
+
+.home-research-note {
+  font-size: 0.78rem;
+  font-style: italic;
+  margin-top: 1.25rem;
+}
+
+.home-research-note a {
+  color: #a9d8ff;
+}
+
 .site-page {
   padding-top: 1.5rem;
 }
@@ -155,76 +297,74 @@ body.home-body .home-page p {
   margin: 0.75rem 0 0;
 }
 
+// SciOly page: compact folder list, styled after aqcheng.github.io/scioly.
+body.scioly-body .post-header {
+  display: none;
+}
+
+.scioly h2 {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin: 0 0 1.25rem;
+}
+
+.scioly h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 2rem 0 0.75rem;
+}
+
 .test-list {
-  margin: 1rem 0 2.25rem;
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding-left: 0.6rem;
+}
+
+.test-list li {
+  margin: 0.35rem 0;
 }
 
 .test-item {
   align-items: center;
-  border-bottom: 1px solid var(--global-divider-color);
-  border-top: 1px solid var(--global-divider-color);
   color: inherit !important;
-  display: flex;
-  gap: 1rem;
-  padding: 1rem 0;
-  transition: color 180ms ease, padding-left 180ms ease;
+  display: inline-flex;
+  gap: 0.7rem;
 }
 
-.test-item:hover {
-  color: var(--global-hover-color) !important;
-  padding-left: 0.35rem;
+a.test-item:hover {
+  color: var(--global-theme-color) !important;
   text-decoration: none;
 }
 
 .test-icon {
-  align-items: center;
-  border: 1px solid var(--global-theme-color);
   color: var(--global-theme-color);
-  display: inline-flex;
-  flex: 0 0 2rem;
-  font-size: 1rem;
-  height: 2rem;
-  justify-content: center;
-  width: 2rem;
-}
-
-.test-copy strong,
-.test-copy small {
-  display: block;
-}
-
-.test-copy small {
-  color: var(--global-text-color-light);
-  font-size: 0.8rem;
-  margin-top: 0.25rem;
-}
-
-.test-item-soon {
-  color: var(--global-text-color-light) !important;
+  flex: 0 0 auto;
+  height: 1.15rem;
+  width: 1.15rem;
 }
 
 .test-item-soon .test-icon {
-  border-color: var(--global-divider-color);
-  color: var(--global-text-color-light);
+  color: inherit;
 }
 
-.test-item-soon:hover {
-  color: var(--global-text-color-light) !important;
-  padding-left: 0;
+.test-item-soon small {
+  font-size: 0.75rem;
+  font-style: italic;
 }
 
 .test-note {
   color: var(--global-text-color-light);
   font-size: 0.9rem;
+  margin-top: 2rem;
 }
 
 @media (max-width: 767px) {
   body.home-body .home-page .post-title {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
   }
 
   body.home-body .home-page article {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .home-links,
@@ -240,4 +380,290 @@ progress {
 
 progress.is-visible {
   opacity: 1;
+}
+
+// Publication list styling based on Yan Dai's publication page.
+.pub-list {
+  list-style: none;
+  margin: 0 0 3rem;
+  padding: 0;
+}
+
+.pub-item {
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 0;
+  padding: 1.45rem 0 1.3rem;
+}
+
+.pub-meta {
+  color: #f1f1f1;
+  flex: 0 0 9.5rem;
+  font-family: "Roboto Slab", Georgia, serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.25;
+  padding-top: 0.1rem;
+  text-align: right;
+}
+
+.pub-venue,
+.pub-year {
+  display: block;
+}
+
+.pub-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.pub-content,
+.pub-content p {
+  color: #f1f1f1;
+  font-family: "Roboto Slab", Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.32;
+}
+
+.pub-content p {
+  margin-bottom: 0.65rem;
+}
+
+.pub-title {
+  color: #159ac3;
+  display: inline;
+  font-family: "Roboto Slab", Georgia, serif;
+  font-size: 1rem;
+}
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.7rem;
+}
+
+.pub-link {
+  align-items: center;
+  border: 2px solid #287e9a;
+  border-radius: 999px;
+  color: #f1f1f1 !important;
+  display: inline-flex;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  gap: 0.45rem;
+  line-height: 1;
+  padding: 0.45rem 0.8rem;
+  text-decoration: none !important;
+}
+
+.pub-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff !important;
+}
+
+.pub-link i {
+  color: #13a7d1;
+  font-size: 0.95em;
+}
+
+.pub-link-slides {
+  border-color: #4e827b;
+}
+
+.pub-link-slides i {
+  color: #68d3c3;
+}
+
+.pub-link-video {
+  border-color: #806c3f;
+}
+
+.pub-link-video i {
+  color: #e1b347;
+}
+
+.author-highlight {
+  font-weight: 700;
+}
+
+@media (max-width: 576px) {
+  .pub-item {
+    display: block;
+  }
+
+  .pub-meta {
+    padding-bottom: 0.35rem;
+    text-align: left;
+  }
+}
+
+body.research-body {
+  background: #000;
+  color: #f1f1f1;
+}
+
+body.research-body .container {
+  max-width: 750px;
+}
+
+body.research-body .post-header {
+  display: none;
+}
+
+body.research-body .site-page {
+  padding-top: 1.5rem;
+}
+
+.selected-research {
+  color: #f5f5f5;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.selected-research .research-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 2.5rem;
+}
+
+.selected-research h3 {
+  color: #f5f5f5;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2.5rem 0 1.5rem;
+}
+
+.aq-entry {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  margin: 0 0 2rem;
+}
+
+.aq-arrow {
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.aq-title {
+  color: #f5f5f5;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+a.aq-title:hover {
+  color: #cba9dc;
+}
+
+.aq-authors {
+  color: #f5f5f5;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  margin-top: 0.55rem;
+}
+
+.aq-link {
+  color: #a9d8ff !important;
+  display: inline-block;
+  font-size: 0.875rem;
+  margin-top: 0.55rem;
+}
+
+.aq-link:hover {
+  color: #d9efff !important;
+}
+
+.aq-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+}
+
+.aq-links .aq-status {
+  color: #9e9e9e;
+  font-size: 0.875rem;
+  font-style: italic;
+  margin-top: 0.55rem;
+}
+
+.aq-meta {
+  color: #bdbdbd;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  margin-top: 0.4rem;
+}
+
+.aq-desc {
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0.6rem 0 0;
+  max-width: 46rem;
+}
+
+.aq-note {
+  color: #bdbdbd;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.aq-note a {
+  color: #a9d8ff;
+}
+
+body.research-body .post-title,
+body.research-body article > h1 {
+  color: #f1f1f1;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 700;
+}
+
+body.research-body .post-title {
+  font-size: 2.5rem;
+}
+
+body.research-body article > h1 {
+  font-size: 2.5rem;
+  margin: 2.5rem 0 1.5rem;
+}
+
+body.research-body .pub-content a:hover {
+  color: #62c8ec;
+}
+
+@media (max-width: 768px) {
+  body.research-body .container {
+    max-width: none;
+  }
+
+  .selected-research .research-heading {
+    font-size: 2.2rem;
+  }
+
+  .aq-title {
+    font-size: 0.95rem;
+  }
+
+  .aq-authors {
+    font-size: 0.85rem;
+  }
+
+  .pub-meta {
+    flex-basis: 7rem;
+    font-size: 1.1rem;
+  }
+
+  .pub-content,
+  .pub-content p,
+  .pub-title {
+    font-size: 1.1rem;
+  }
+
+  .pub-link {
+    font-size: 0.95rem;
+  }
 }

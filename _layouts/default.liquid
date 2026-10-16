@@ -16,7 +16,7 @@
   </head>
 
   <!-- Body -->
-  <body class="{% if page.permalink == '/' %}home-body {% endif %}{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+  <body class="{% if page.permalink == '/' %}home-body {% endif %}{% if page.permalink == '/research/' %}research-body {% endif %}{% if page.permalink == '/scioly/' %}scioly-body {% endif %}{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
     <!-- Header -->
     {% include header.liquid %}
 

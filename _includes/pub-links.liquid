@@ -1,0 +1,18 @@
+<div class="pub-links">
+  {% assign link_rows = include.links | strip | split: "\n" %}
+  {% for row in link_rows %}
+    {% assign link = row | strip | split: "|" %}
+    {% if link.size >= 2 %}
+      <a class="pub-link pub-link-{{ link[2] }}" href="{{ link[1] }}" target="_blank" rel="noopener">
+        {% case link[2] %}
+          {% when 'paper' %}<i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+          {% when 'abstract' %}<i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+          {% when 'slides' %}<i class="fa-solid fa-person-chalkboard" aria-hidden="true"></i>
+          {% when 'video' %}<i class="fa-solid fa-video" aria-hidden="true"></i>
+          {% else %}<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        {% endcase %}
+        {{ link[0] }}
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>

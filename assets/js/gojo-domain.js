@@ -81,8 +81,8 @@
   container.appendChild(renderer.domElement);
 
   // Dense, dim stars create the texture; the smaller bright layer adds depth.
-  const dimStars = createStars(30000, { x: 42, y: 28, z: 30 }, 0.045, 0x9db9e8, 17, 0.005, 0.08);
-  const brightStars = createStars(7000, { x: 38, y: 25, z: 25 }, 0.075, 0xeaf3ff, 91, 0.005, 0.08);
+  const dimStars = createStars(30000, { x: 42, y: 28, z: 30 }, 0.045, 0x9db9e8, 17, 0.005, 0.025);
+  const brightStars = createStars(7000, { x: 38, y: 25, z: 25 }, 0.075, 0xeaf3ff, 91, 0.005, 0.025);
   scene.add(dimStars, brightStars);
 
   function resize() {
