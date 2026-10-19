@@ -302,7 +302,6 @@
     brightStars.rotation.z = -seconds * 0.002;
     milkyWayStars.material.uniforms.uTime.value = seconds;
     milkyWayBrightStars.material.uniforms.uTime.value = seconds;
-    milkyWay.rotation.z = seconds * 0.0015;
     renderer.render(scene, camera);
     window.requestAnimationFrame(animate);
   }

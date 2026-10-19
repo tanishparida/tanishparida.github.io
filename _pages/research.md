@@ -43,6 +43,7 @@ nav_order: 2
       <div class="aq-meta">with S. Saha, Thomas Burbine, Darby Dyar · Mount Holyoke College · 2025 – present</div>
       <p class="aq-desc">Using PCA, SMOTE, and ROCKET variants to classify meteorites from their reflectance spectra.</p>
       <div class="aq-links">
+        <a class="aq-link" href="https://submissions.mirasmart.com/AAS247/Itinerary/PresentationDetail.aspx?evdid=3249">AAS 247 abstract</a>
         <a class="aq-link" href="https://agu.confex.com/agu/agu25/meetingapp.cgi/Paper/1932667">AGU abstract</a>
         <a class="aq-link" href="https://gsameetings.secure-platform.com/connects25/solicitations/103002/sessiongallery/schedule/items/95122/application/10165">GSA abstract</a>
       </div>

@@ -9,7 +9,7 @@ profile:
 
 ---
 
-Hi! I’m a rising junior in Massachusetts interested in math, computer science, and astronomy. I compete in math competitions and on my school’s Science Olympiad team, mostly on robotics, physics, and inquiry.
+Hi! I’m a junior in Massachusetts interested in math, computer science, and astronomy. I compete in math competitions and on my school’s Science Olympiad team, mostly on robotics, physics, and inquiry.
 
 I also do math research through MIT PRIMES-USA and astronomy research, mostly on galaxies. Outside of school, I watch a lot of sports (teams I support: arsenal, england, celtics, patriots) and play sports with friends. You can reach me on Discord at `@pengi.23` or through gmail at `tanish.parida@gmail.com`.
 
