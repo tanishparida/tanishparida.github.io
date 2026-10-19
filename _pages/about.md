@@ -18,6 +18,7 @@ I also do math research through MIT PRIMES-USA and astronomy research, mostly on
   <ul>
     <li><span class="home-upcoming-when">October</span> MIT PRIMES Conference <span class="home-upcoming-where">@ MIT</span></li>
     <li><span class="home-upcoming-when">January</span> AAS 249 <span class="home-upcoming-where">@ Salt Lake City</span></li>
+    <li><span class="home-upcoming-when">January</span> JMM 2027 <span class="home-upcoming-where">@ Chicago</span></li>
   </ul>
 </section>
 
