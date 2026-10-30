@@ -70,7 +70,9 @@
         <line class="mc-norm" x1="${sx(normWavelength)}" x2="${sx(normWavelength)}" y1="${pad.top}" y2="${height - pad.bottom}"/>
         <path class="mc-line" d="${path}"/>
         <text class="mc-axis" x="${(pad.left + width - pad.right) / 2}" y="${height - 4}" text-anchor="middle">Wavelength (µm)</text>
-        <text class="mc-axis" transform="translate(12 ${(pad.top + height - pad.bottom) / 2}) rotate(-90)" text-anchor="middle">Reflectance / R(0.80 µm)</text>
+        <text class="mc-axis" transform="translate(12 ${
+          (pad.top + height - pad.bottom) / 2
+        }) rotate(-90)" text-anchor="middle">Reflectance / R(0.80 µm)</text>
       </svg>`;
   }
 

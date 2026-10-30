@@ -70,7 +70,7 @@
       const hi = this.grid[this.grid.length - 1];
       if (wavelengths.length < 2 || lo < wavelengths[0] || hi > wavelengths[wavelengths.length - 1]) {
         throw new Error(
-          `The spectrum must cover ${lo}–${hi} µm; this one covers ${wavelengths[0].toFixed(3)}–${wavelengths[wavelengths.length - 1].toFixed(3)} µm.`,
+          `The spectrum must cover ${lo}–${hi} µm; this one covers ${wavelengths[0].toFixed(3)}–${wavelengths[wavelengths.length - 1].toFixed(3)} µm.`
         );
       }
       const values = interp(this.grid, wavelengths, reflectance);
@@ -138,9 +138,7 @@
       const top = Math.max(...scores);
       const exp = scores.map((s) => Math.exp(s - top));
       const total = exp.reduce((t, v) => t + v, 0);
-      const ranked = this.classes
-        .map((name, i) => ({ name, score: scores[i], probability: exp[i] / total }))
-        .sort((p, q) => q.score - p.score);
+      const ranked = this.classes.map((name, i) => ({ name, score: scores[i], probability: exp[i] / total })).sort((p, q) => q.score - p.score);
       return { normalized, scores, ranked };
     }
   }

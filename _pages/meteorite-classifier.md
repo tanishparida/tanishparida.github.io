@@ -28,8 +28,8 @@ description: Classify a reflectance spectrum into one of 16 meteorite groups, in
     <button type="button" class="mc-chip" data-example="relab-iron-c1sc63.txt">Iron</button>
   </div>
 
-  <label class="mc-sr-only" for="mc-input">Spectrum data</label>
-  <textarea id="mc-input" class="mc-input" rows="9" spellcheck="false" placeholder="0.535  0.912&#10;0.540  0.918&#10;0.545  0.925&#10;..."></textarea>
+<label class="mc-sr-only" for="mc-input">Spectrum data</label>
+<textarea id="mc-input" class="mc-input" rows="9" spellcheck="false" placeholder="0.535  0.912&#10;0.540  0.918&#10;0.545  0.925&#10;..."></textarea>
 
   <div class="mc-actions">
     <button type="button" id="mc-classify" class="mc-button" disabled>Loading model…</button>
@@ -54,6 +54,7 @@ description: Classify a reflectance spectrum into one of 16 meteorite groups, in
     <h3>All groups</h3>
     <p class="mc-hint">Bars show a softmax of the Ridge classifier scores: a relative ranking, not a calibrated probability.</p>
     <ol id="mc-bars" class="mc-bars"></ol>
+
   </div>
 
   <h3>How it works</h3>
