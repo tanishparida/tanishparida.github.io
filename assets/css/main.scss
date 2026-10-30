@@ -667,3 +667,239 @@ body.research-body .pub-content a:hover {
     font-size: 0.95rem;
   }
 }
+
+// Meteorite classifier page (_pages/meteorite-classifier.md, assets/js/meteorite-classifier.js).
+// Reuses the research page's black background via the research-body class in _layouts/default.liquid.
+.meteorite-classifier h3 {
+  margin: 2.25rem 0 0.9rem;
+}
+
+.meteorite-classifier .aq-desc a,
+.meteorite-classifier .aq-note a {
+  color: #a9d8ff;
+}
+
+.mc-hint {
+  color: #bdbdbd;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  margin: 0 0 0.9rem;
+}
+
+.mc-hint code {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e0e0e0;
+}
+
+.mc-sr-only {
+  clip: rect(0 0 0 0);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+
+.mc-examples {
+  align-items: center;
+  color: #bdbdbd;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.mc-chip,
+.mc-file,
+.mc-button {
+  border: 2px solid #287e9a;
+  border-radius: 999px;
+  color: #f1f1f1;
+  cursor: pointer;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+  padding: 0.45rem 0.8rem;
+}
+
+.mc-chip,
+.mc-file {
+  background: transparent;
+}
+
+.mc-chip:hover,
+.mc-file:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.mc-input {
+  background: #0d0d0d;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #e0e0e0;
+  font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  padding: 0.75rem;
+  resize: vertical;
+  width: 100%;
+}
+
+.mc-input:focus {
+  border-color: #287e9a;
+  outline: none;
+}
+
+.mc-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.8rem;
+}
+
+.mc-button {
+  background: #287e9a;
+  padding: 0.6rem 1.4rem;
+}
+
+.mc-button:hover:not(:disabled) {
+  background: #13a7d1;
+  border-color: #13a7d1;
+}
+
+.mc-button:disabled {
+  cursor: progress;
+  opacity: 0.6;
+}
+
+.mc-file input {
+  display: none;
+}
+
+.mc-error {
+  border-left: 3px solid #e57373;
+  color: #ffb4b4;
+  font-size: 0.9rem;
+  margin: 1rem 0 0;
+  padding: 0.4rem 0.8rem;
+}
+
+.mc-prediction {
+  border: 1px solid #287e9a;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem 1.25rem;
+}
+
+.mc-label {
+  color: #9e9e9e;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.mc-top {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.mc-top-desc {
+  color: #bdbdbd;
+  font-size: 0.95rem;
+}
+
+.mc-plot {
+  margin-top: 1.25rem;
+}
+
+.mc-plot svg {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.mc-plot .mc-line {
+  fill: none;
+  stroke: #62c8ec;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.mc-plot .mc-grid {
+  stroke: #262626;
+  stroke-width: 1;
+}
+
+.mc-plot .mc-norm {
+  stroke: #806c3f;
+  stroke-dasharray: 4 4;
+  stroke-width: 1;
+}
+
+.mc-plot .mc-tick,
+.mc-plot .mc-axis {
+  fill: #9e9e9e;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 12px;
+}
+
+.mc-bars {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mc-bar {
+  align-items: center;
+  color: #bdbdbd;
+  display: grid;
+  font-size: 0.875rem;
+  gap: 0.75rem;
+  grid-template-columns: 11.5rem minmax(0, 1fr) 3.5rem;
+  margin: 0.3rem 0;
+}
+
+.mc-bar-top {
+  color: #fff;
+  font-weight: 700;
+}
+
+.mc-bar-track {
+  background: #1a1a1a;
+  border-radius: 999px;
+  height: 0.55rem;
+  overflow: hidden;
+}
+
+.mc-bar-fill {
+  background: #287e9a;
+  border-radius: 999px;
+  display: block;
+  height: 100%;
+}
+
+.mc-bar-top .mc-bar-fill {
+  background: #62c8ec;
+}
+
+.mc-bar-value {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+@media (max-width: 576px) {
+  .mc-bar {
+    gap: 0.5rem;
+    grid-template-columns: 8.5rem minmax(0, 1fr) 3rem;
+  }
+
+  .mc-top {
+    font-size: 1.5rem;
+  }
+}
